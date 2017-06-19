@@ -1,82 +1,35 @@
-/* styles */
-/* called by your view template */
-
-/* You might want to try something fancier: */
-/* less: http://lesscss.org/ */
-
-* {
-  box-sizing: border-box;
-}
+/****** Main Styling ******/
 
 body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 25px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #222;
+	background-color: #ECF0F1;
+	text-align: center;
 }
 
-h1 {
-  font-weight: bold;
-  color: pink;
+.container {
+	padding: 0;
+	margin-top: 40px;
 }
 
-.bold {
-  font-weight: bold;
+.footer {
+	margin-top: 60px;
 }
 
-p {
-  max-width: 600px;
+ol {
+	list-style-position: inside;
+}
+ul {
+	list-style-type: none;
 }
 
-form {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: cyan;
-  display: inline-block;
-  width: 100%;
-  max-width: 340px;
-  border-radius: 3px;
+a {
+	color: #2574A9;
 }
+/****** Logo Div Styling ******/
 
-input {
-  display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
-}
-
-button {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: yellow;
-}
-
-button:active {
-  box-shadow: none;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-footer {
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid lightgrey;
-}
-
-footer > a {
-  color: #BBBBBB;
-}
-
-.nicejob {
-  text-decoration: line-through;
+img {
+	margin: 20px auto 0 auto;
+	display: block;
 }

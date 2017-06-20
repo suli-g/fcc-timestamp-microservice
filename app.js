@@ -2,13 +2,11 @@ const express = require('express');
 const app = express();
 const url = require('url');
 const moment = require('moment');
-
-app.get((req, res)=>{
-  res.writeHead(200, {'Content-type':'application/json'});
-  let url_ = url.parse(req.url);
-  let time = moment(url_.search.substr(5));
-  let pathname = url_.pathname.substr(1);
-  res.write(time);
+app.set('')
+app.use(url.middleware(process.argv[0]));
+app.get('/', (req, res)=>{
+  re
+  res.write(process.argv[1]);
   res.end();
 });
-app.listen(process.argv[2], (err)=> {if(err) console.log(err)});
+app.listen(process.env.PORT);

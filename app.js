@@ -7,7 +7,7 @@ app.get('/', (req, res)=>{
         'content-type': 'application/json',
         'charset': 'utf8'
     })
-  res.write(JSON.stringify({"url": process.argv[0]}));
+  res.write(JSON.stringify({"url": "1"}));
   res.end();
 });
 app.listen(process.env.PORT);

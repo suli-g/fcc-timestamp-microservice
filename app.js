@@ -16,9 +16,12 @@ app.get('', (req, res)=>{
 })
 app.get('/:time', (req, res)=>{
   res.set('charset', 'utf8');
-  let entry = req.params.time;
-  let date = new Date(entry)
-  res.send(date);
+  let entry = req.params.time, date;
+  if (parseInt(entry) == entry){
+    date = Date.parse(entry);
+    console.log(date);
+  }
+  res.send(JSON.stringify({"unix": date, "natural": date}));
   res.end();
 });
 app.listen(process.env.PORT);

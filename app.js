@@ -16,13 +16,14 @@ app.get('', (req, res)=>{
 })
 app.set("charset", "utf8");
 app.get('/:time', (req, res)=>{
-  let entry = new Date(req.params.time), unix, normal, date;
-  if (!isNaN(Date.parse(entry))){
-    unix = Date.parse(entry);
-    normal = entry;
-    date = JSON.parse({"unix": unix, "normal": normal});
-    console.log(JSON.stringify(date));
+  let entry = req.params.time, unix, normal, date;
+  if (parseInt(entry) == entry){
+    unix = moment(entry);
   }
+    
+    normal = moment(entry).format("YYYY MM DD");
+    date = {"unix": unix, "normal": normal};
+    console.log(JSON.stringify(date));
   res.set('charset', 'utf8');
   res.send(date);
   res.end();

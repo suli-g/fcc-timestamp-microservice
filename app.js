@@ -16,7 +16,9 @@ app.get('', (req, res)=>{
 })
 app.get('/:time', (req, res)=>{
   res.set('charset', 'utf8');
-  res.write(req.params.time);
+  let entry = req.params.time;
+  let date = new Date(entry)
+  res.send(date);
   res.end();
 });
 app.listen(process.env.PORT);

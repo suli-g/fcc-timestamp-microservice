@@ -17,7 +17,7 @@ app.get('', (req, res)=>{
 app.get('/:time', (req, res)=>{
   res.set('charset', 'utf8');
   let entry = req.params.time, date;
-  if (parseInt(entry) == entry){
+  if (!Date(entry).parse() == Number){
     date = Date.parse(entry);
     console.log(date);
   }

@@ -17,13 +17,10 @@ app.get('', (req, res)=>{
 app.set("charset", "utf8");
 app.get('/:time', (req, res)=>{
   let entry = req.params.time, unix, normal, date;
-  if (parseInt(entry) == entry){
-    unix = moment(entry);
+  if (moment(entry).isValid()){
+    console.log(entry);
   }
     
-    normal = moment(entry).format("YYYY MM DD");
-    date = {"unix": unix, "normal": normal};
-    console.log(JSON.stringify(date));
   res.set('charset', 'utf8');
   res.send(date);
   res.end();

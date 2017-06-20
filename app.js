@@ -1,12 +1,8 @@
 const express = require('express');
 const app = express();
 const url = require('url');
-app.get('/', (req, res)=>{
-  res.set({
-        'content-type': 'application/json',
-        'charset': 'utf8'
-    })
-  res.write(JSON.stringify({"url": "1"}));
+app.get('/:time', (req, res)=>{
+  res.send(req.params.id);
   res.end();
 });
 app.listen(process.env.PORT);

@@ -1,12 +1,13 @@
 {
   "name": "fcc-learn-npm-package-json",
   "dependencies": {
+    "app": "^1.0.0",
     "express": "^4.14.0",
-    "app": "^1.0.0"
+    "moments": "0.0.2"
   },
   "main": "app.js",
   "scripts": {
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "engines": {
     "node": "4.4.5"

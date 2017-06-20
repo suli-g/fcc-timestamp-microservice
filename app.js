@@ -14,14 +14,17 @@ app.get('', (req, res)=>{
   res.send(msg);
   res.end();
 })
+app.set("charset", "utf8");
 app.get('/:time', (req, res)=>{
-  res.set('charset', 'utf8');
-  let entry = req.params.time, date;
-  if (!Date(entry).parse() == Number){
-    date = Date.parse(entry);
-    console.log(date);
+  let entry = new Date(req.params.time), unix, normal, date;
+  if (!isNaN(Date.parse(entry))){
+    unix = Date.parse(entry);
+    normal = entry;
+    date = JSON.parse({"unix": unix, "normal": normal});
+    console.log(JSON.stringify(date));
   }
-  res.send(JSON.stringify({"unix": date, "natural": date}));
+  res.set('charset', 'utf8');
+  res.send(date);
   res.end();
 });
 app.listen(process.env.PORT);

@@ -33,12 +33,12 @@ app.get('/:time', (req, res)=>{
   
   if (parseInt(entry) == entry){
     //store it as a unix date
-    unix = moment.unix(entry).format("x");
+    unix = moment(entry, "x").format("x");
     //convert the unix date to a natural language date
     natural = moment(entry, "x").format("MMMM DD, YYYY");
   }
-  //if the date is *not* a unix date (basically, if its not an integer (even a1123)):
   
+  //if the date is *not* a unix date (basically, if its not an integer (even a1123)):
   else {
     //store it as a natural date (still even a1123)
     natural = moment(entry).format("MMMM D, YYYY");

@@ -18,10 +18,15 @@ app.get('/:time', (req, res)=>{
   res.set('content-type', 'application/json');
   let entry = req.params.time, unix, normal, date;
   if (parseInt(entry) == entry){
-    unix = moment(entry);
-    normal = moment(entry, "x").format("DD/MM/YYYY");
-    date = {"unix": unix, "normal": normal}
+    unix = moment.unix(entry).format("x");
+    normal = moment(entry, "x").format("MMMM DD, YYYY");
   }
+  else {
+    normal = moment(entry).format("MMMM DD, YYYY");
+    unix = moment(entry).format("x");
+  }
+  if (!(moment(normal).isValid() || moment(unix).isValid)){}
+  date = {"unix": unix, "normal": normal}
   res.send(date);
   res.end();
 });

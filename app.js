@@ -14,14 +14,14 @@ app.get('', (req, res)=>{
   res.send(msg);
   res.end();
 })
-app.set("charset", "utf8");
 app.get('/:time', (req, res)=>{
+  res.set('content-type', 'application/json');
   let entry = req.params.time, unix, normal, date;
-  if (moment(entry).isValid()){
-    console.log(entry);
+  if (parseInt(entry) == entry){
+    unix = moment(entry);
+    normal = moment(entry, "x").format("DD/MM/YYYY");
+    date = {"unix": unix, "normal": normal}
   }
-    
-  res.set('charset', 'utf8');
   res.send(date);
   res.end();
 });

@@ -27,7 +27,7 @@ app.get('/:time', (req, res)=>{
   res.set('content-type', 'application/json');
   //store the time provided in the url as a variable
   const entry = req.params.time;
-  //declare variables (use 'let' because they change)
+  //declare variables for unix date, natural date and the date JSON object
   let unix, natural, date;
   //if the entry is an integer (2321313212131) and *only* an integer (not a2323213):
   
